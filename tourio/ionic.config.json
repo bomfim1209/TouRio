@@ -1,0 +1,7 @@
+{
+  "name": "tourio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
