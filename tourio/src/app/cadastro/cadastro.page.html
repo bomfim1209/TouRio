@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>cadastro</ion-title>
   </ion-toolbar>
@@ -10,4 +10,34 @@
       <ion-title size="large">cadastro</ion-title>
     </ion-toolbar>
   </ion-header>
-</ion-content>
+</ion-content> -->
+
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Crie sua Conta</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <form action="#">
+      <div>
+        <label for="nome">Nome Completo:</label>
+        <input type="text" name="nome">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="text" name="email">
+      </div>
+      <div>
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha">
+      </div>
+      <div>
+        <label for="conf-senha">Confirmar Senha:</label>
+        <input type="password" name="conf-senha">
+      </div>
+    
+      <ion-button>Cadastrar</ion-button>
+      </form>
+  </ion-card-content>
+</ion-card>
