@@ -5,8 +5,21 @@
 
 .container{
     --background: none;
-    background-image: url(../../assets/plano-fundo.jpg);
+    background-image: url(https://blog.paineirascorcovado.com.br/wp-content/uploads/2023/06/maxresdefault.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
+
+    height: 100%;
+    width: 100%;
+}
+
+.centrar{
+    padding-top: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
 }
