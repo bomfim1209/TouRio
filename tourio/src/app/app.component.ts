@@ -8,13 +8,13 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  // constructor(private rota :Router, private platatform : Platform) {
-  //   this.initializeApp();
-  // }
+   //constructor(private rota :Router, private platatform : Platform) {
+     //this.initializeApp();
+   //}
 
-  // initializeApp(){
-  //   this.platatform.ready().then(() => {
-  //     this.rota.navigateByUrl('intro');
-  //   })
-  // }
+   //initializeApp(){
+     //this.platatform.ready().then(() => {
+      // this.rota.navigateByUrl('intro');
+    // })
+  //}
 }
