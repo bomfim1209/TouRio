@@ -14,6 +14,7 @@
 <p><b>git push</b>  --> Sobe o arquivo para o repositório remoto.</p>
 <p><b>git pull</b> --> Recupera os arquivos do repositório remoto.</p>
 
+<p><b>git log --oneline</b> --> Exibe todos os commits já feitos.</p>
 # -----------
 <h2>Criando e gerenciando Branchs.</h2>
 <p><b>git branch</b> --> Lista todas as branchs existentes.</p>
