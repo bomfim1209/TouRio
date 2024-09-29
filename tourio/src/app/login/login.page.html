@@ -1,41 +1,24 @@
-<!-- <ion-card class="container">
-  <ion-card-header>
-    <ion-card-title>Iniciar Sessão</ion-card-title>
-      <form action="#">
-        <div>
-          <label for="login">Email:</label>
-          <input type="text" name="login">
-        </div>
-        <div>
-          <label for="senha">senha:</label>
-          <input type="password" name="senha">
-        </div>
+<ion-content>
+  <div class="flex-center">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Login</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-item>
+          <ion-input type="email" label="E-mail" labelPlacement="floating"></ion-input>
+        </ion-item>
 
-        <p>Esqueceu a sua senha? <a href="#">Clique aqui.</a></p>
-        <ion-button>Entrar</ion-button>
-        <ion-button>Cadastrar</ion-button>
-      </form>
-  </ion-card-header>
-</ion-card> -->
+        <ion-item>
+          <ion-input type="password" label="Senha" labelPlacement="floating"></ion-input>
+        </ion-item>
+        
+        <ion-button color="success" size="full">Entrar</ion-button>
+        <ion-button color="success" size="full" fill="clear">Cadastrar</ion-button>
 
-<ion-content class="container">
-  <div class="centrar">
-    <ion-card-title>Iniciar Sessão</ion-card-title>
-    <form action="#">
-      <div>
-        <label for="login">Email:</label>
-        <input type="text" name="login">
-      </div>
-      <div>
-        <label for="senha">Senha:</label>
-        <input type="password" name="senha">
-      </div>
+      </ion-card-content>
 
-      <p>Esqueceu a sua senha? <a href="#">Clique aqui.</a></p>
-      <ion-button type="submit">Entrar</ion-button>
-      <ion-button>Cadastrar</ion-button>
-      </form>
+    </ion-card>
   </div>
-  
-  <ion-button href="/tab1">Login</ion-button>
 </ion-content>

@@ -1,43 +1,30 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>cadastro</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cadastro</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content> -->
-
-
-<ion-card>
-  <ion-card-header>
-    <ion-card-title>Crie sua Conta</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-    <form action="#">
-      <div>
-        <label for="nome">Nome Completo:</label>
-        <input type="text" name="nome">
-      </div>
-      <div>
-        <label for="email">Email:</label>
-        <input type="text" name="email">
-      </div>
-      <div>
-        <label for="senha">Senha:</label>
-        <input type="password" name="senha">
-      </div>
-      <div>
-        <label for="conf-senha">Confirmar Senha:</label>
-        <input type="password" name="conf-senha">
-      </div>
+<ion-content>
+  <div class="flex-center">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Cadastro</ion-card-title>
+      </ion-card-header>
     
-      <ion-button>Cadastrar</ion-button>
-      </form>
-  </ion-card-content>
-</ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-input type="text" label="Nome Completo" labelPlacement="floating"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="email" label="E-mail" labelPlacement="floating"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="password" label="Senha" labelPlacement="floating"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="password" label="Confirmar Senha" labelPlacement="floating"></ion-input>
+        </ion-item>
+      </ion-card-content>
+
+      <ion-button color="success" size="full">Cadastrar</ion-button>
+
+    </ion-card>
+  </div>
+</ion-content>
