@@ -17,6 +17,7 @@
 <p><b>git log --oneline</b> --> Exibe todos os commits já feitos.</p>
 # -----------
 <h2>Criando e gerenciando Branchs.</h2>
+<p><b>git branch -M main</b> --> Renomeia a branch.</p>
 <p><b>git branch</b> --> Lista todas as branchs existentes.</p>
 <p><b>git branch nome</b> --> Cria a branch.</p> 
 <p><b>git branch -m nome</b> --> Cria a branch com o nome desejado e já alterna para a nova branch.</p>
