@@ -10,6 +10,10 @@ export class IntroPage implements OnInit {
 
   constructor(private rota:Router) { }
 
+  redirecionar(){
+    this.rota.navigateByUrl('/login');
+  }
+
   ngOnInit() {
     setTimeout(() => {
       this.rota.navigateByUrl('login');
