@@ -7,6 +7,9 @@
 <p><b>git add .</b>  --> Adiciona todos os documentos para commit. </p>
 <p><b>git add nome </b>  --> Adiciona um documento ou diretorio especifico para commit. </p> 
 
+<p><b>git reset</b>  --> Remove todas as alterações do stage para commit. </p>
+<p><b>git reset arquivo</b>  --> Remove todas as alterações do stage para commit. </p>
+
 <p><b>git commit -m "comentario aqui"</b>  --> Cria um comentario para o commit.</p>
 
 <p><b>git remote add origin https://github.com/sua_pasta_github.git</b> --> Adiciona o caminho do repositório remoto.</p>
