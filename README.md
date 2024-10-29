@@ -13,6 +13,8 @@
 <p><b>git commit -m "comentario aqui"</b>  --> Cria um comentario para o commit.</p>
 
 <p><b>git remote add origin https://github.com/sua_pasta_github.git</b> --> Adiciona o caminho do repositório remoto.</p>
+<p><b>git remote -v</b> --> Lista os caminhos remotos existentes no repositório local.</p>
+<p><b>git remote rm nome</b> --> Remove o caminho do repositório local.</p>
 
 <p><b>git push</b>  --> Sobe o arquivo para o repositório remoto.</p>
 <p><b>git pull</b> --> Recupera os arquivos do repositório remoto.</p>
