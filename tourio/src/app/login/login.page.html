@@ -7,14 +7,14 @@
     
       <ion-card-content>
         <ion-item>
-          <ion-input type="email" label="E-mail" labelPlacement="floating"></ion-input>
+          <ion-input type="email" label="E-mail" labelPlacement="floating" [(ngModel)]="email"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input type="password" label="Senha" labelPlacement="floating"></ion-input>
+          <ion-input type="password" label="Senha" labelPlacement="floating" [(ngModel)]="password" type="password"></ion-input>
         </ion-item>
         
-        <ion-button color="success" size="full" (click)="redirecionar()">Entrar</ion-button>
+        <ion-button color="success" size="full" (click)="login()">Entrar</ion-button>
         <ion-button color="success" size="full" fill="clear">Cadastrar</ion-button>
 
       </ion-card-content>
