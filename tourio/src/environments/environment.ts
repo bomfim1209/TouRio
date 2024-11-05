@@ -1,24 +1,24 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
-export const environment = {
-  production: true
-  //apiKey: "coloca aq"
-  //authDomain: "coloca aq"
-  //projectId: "coloca aq"
-  //storageBucket: "coloca aq"
-  //messagingSenderId: "coloca aq"
-  //appId: "coloca aq"
-  //measurementId: "coloca aq"
-};
-
-//const app = initializeApp(environment);
-//const analytics = getAnalytics(app);
-
 import {initializeApp} from 'firebase/app';
 import {getAnalytics} from 'firebase/analytics';
 import { producerAccessed } from '@angular/core/primitives/signals';
+
+export const environment = {
+  production: false,
+  apiKey: "AIzaSyDivXsHVAABGRG9Jtk5tYQlXVJyfmLzXs0",
+  authDomain: "tourio-20368.firebaseapp.com",
+  projectId: "tourio-20368",
+  storageBucket: "tourio-20368.firebasestorage.app",
+  messagingSenderId: "894586811710",
+  appId: "1:894586811710:web:70211c8fa3ad5c5130286f"
+};
+
+const app = initializeApp(environment);
+const analytics = getAnalytics(app);
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file

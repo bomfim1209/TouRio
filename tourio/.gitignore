@@ -72,6 +72,4 @@ Thumbs.db
 
 
 # Parametros de keys
-/environments
-src\environments\environment.prod.ts
-src\environments\environment.ts
+/src/environments/
