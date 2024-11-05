@@ -23,13 +23,18 @@
 # -----------
 <h2>Criando e gerenciando Branchs.</h2>
 <p><b>git branch -M nome</b> --> Renomeia a branch.</p>
-<p><b>git branch</b> --> Lista todas as branchs existentes.</p>
 <p><b>git branch nome</b> --> Cria a branch.</p> 
 <p><b>git branch -m nome</b> --> Cria a branch com o nome desejado e já alterna para a nova branch.</p>
 <p><b>git branch -d nome</b> --> Deleta a branch.</p>
-<p><b>git branch -a</b> --> Lista branch locais e remotas.</p>
+<br>
+<p><b>git branch</b> --> Lista todas as branchs locais existentes.</p>
+<p><b>git branch -a</b> --> Lista branch locais e remotas(all).</p>
+<p><b>git branch -v</b> --> Lista branch com seu ultimo commit(verbose).</p>
 <p><b>git branch -r</b> --> Lista branch remotas.</p>
 <p><b>git push origin --delete nome_da_branch</b> --> Deleta uma branch remotas.</p>
+<br>
+<p><b>git fetch</b> --> Recupera todas as ramificações do repositório remoto padrão.</p>
+<p><b>git fetch origin branch_name</b> --> Podemos especificar o ramo que queremos buscar passando-o como parâmetro.</p>
 <br>
 <p><b>git checkout nome</b> --> Alterna entre as branch.</p>
 <p><b>git merge nome_da_branch</b> --> Nesse caso é necessario esta na branch de destino para iniciar o merge
