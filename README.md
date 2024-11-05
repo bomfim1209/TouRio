@@ -26,7 +26,10 @@
 <p><b>git branch</b> --> Lista todas as branchs existentes.</p>
 <p><b>git branch nome</b> --> Cria a branch.</p> 
 <p><b>git branch -m nome</b> --> Cria a branch com o nome desejado e já alterna para a nova branch.</p>
-<p><b> git branch -d nome</b> --> Deleta a branch.</p>
+<p><b>git branch -d nome</b> --> Deleta a branch.</p>
+<p><b>git branch -a</b> --> Lista branch locais e remotas.</p>
+<p><b>git branch -r</b> --> Lista branch remotas.</p>
+<p><b>git push origin --delete nome_da_branch</b> --> Deleta uma branch remotas.</p>
 <br>
 <p><b>git checkout nome</b> --> Alterna entre as branch.</p>
 <p><b>git merge nome_da_branch</b> --> Nesse caso é necessario esta na branch de destino para iniciar o merge
