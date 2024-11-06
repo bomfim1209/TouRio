@@ -72,5 +72,4 @@ Thumbs.db
 
 
 # Parametros de keys
-/src/environments/
-/src/environments/*.ts
+# /src/environments/
