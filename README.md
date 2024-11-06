@@ -1,6 +1,11 @@
 # TouRio
+# -----------
+
+# Gitignore
+<p><b>git rm -r --cached nome_do_arquivo ou diretorio</b>  --> Remove dos itens ja rastreados o arquivo ou diretorio.(usar quando subir arquivos sensiveis como chaves de APIs.)</p>
 
 # -----------
+# Comandos Git
 <h2>Comandos básicos de Git</h2>
 <p><b>git init </b> --> Inicia o repositorio local.</p>
 <br>
