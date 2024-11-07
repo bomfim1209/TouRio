@@ -50,7 +50,9 @@ export class LoginPage implements OnInit {
       toast.present();
     }
     
-    
+    redirecionar_cadastro(){
+      this.rota.navigateByUrl('/cadastro');
+    }
 
   ngOnInit() {
   }

@@ -7,23 +7,23 @@
     
       <ion-card-content>
         <ion-item>
-          <ion-input type="text" label="Nome Completo" labelPlacement="floating"></ion-input>
+          <ion-input type="text" label="Nome Completo" labelPlacement="floating" [(ngModel)]="fullName"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input type="email" label="E-mail" labelPlacement="floating"></ion-input>
+          <ion-input type="email" label="E-mail" labelPlacement="floating" [(ngModel)]="email"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input type="password" label="Senha" labelPlacement="floating"></ion-input>
+          <ion-input type="password" label="Senha" labelPlacement="floating" [(ngModel)]="password"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input type="password" label="Confirmar Senha" labelPlacement="floating"></ion-input>
+          <ion-input type="password" label="Confirmar Senha" labelPlacement="floating" [(ngModel)]="confirmPassword"></ion-input>
         </ion-item>
       </ion-card-content>
 
-      <ion-button color="success" size="full">Cadastrar</ion-button>
+      <ion-button color="success" size="full" (click)="register()">Cadastrar</ion-button>
 
     </ion-card>
   </div>

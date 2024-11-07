@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
+import { ToastController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cadastro',
@@ -6,10 +9,65 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastro.page.scss'],
 })
 export class CadastroPage implements OnInit {
+  fullName: string = '';
+  email: string = '';
+  password: string = '';
+  confirmPassword: string = '';
 
-  constructor() { }
+  constructor(
+    private afAuth: AngularFireAuth,
+    private rota: Router,
+    private toastController: ToastController,
+    private loadingController: LoadingController
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  async register() {
+    // Verifica se as senhas coincidem
+    if (this.password !== this.confirmPassword) {
+      this.showToast('As senhas não coincidem.');
+      return;
+    }
+
+    // Verifica se os campos estão preenchidos
+    if (!this.email || !this.password || !this.confirmPassword) {
+      this.showToast('Por favor, preencha todos os campos.');
+      return;
+    }
+
+    const loading = await this.loadingController.create({
+      message: 'Registrando...',
+    });
+    await loading.present();
+
+    try {
+      // Tenta criar uma conta no Firebase com o email e senha
+      const userCredential = await this.afAuth.createUserWithEmailAndPassword(this.email, this.password);
+      await loading.dismiss();
+      
+      // Exibe uma mensagem de sucesso e redireciona para a página de login
+      this.showToast('Cadastro realizado com sucesso!');
+      this.rota.navigateByUrl('/login');
+      
+    } catch (error) {
+      await loading.dismiss();
+      let errorMsg = 'Falha ao realizar o cadastro';
+      
+      // Tratamento de erros específicos do Firebase
+      // if (error.code === 'auth/email-already-in-use') errorMsg = 'Email já está em uso.';
+      // else if (error.code === 'auth/invalid-email') errorMsg = 'Email inválido.';
+      // else if (error.code === 'auth/weak-password') errorMsg = 'Senha muito fraca.';
+      
+      this.showToast(errorMsg);
+    }
   }
 
+  async showToast(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000
+    });
+    toast.present();
+  }
 }
