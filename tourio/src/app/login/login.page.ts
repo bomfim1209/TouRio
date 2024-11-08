@@ -51,7 +51,7 @@ export class LoginPage implements OnInit {
     }
     
     redirecionar_cadastro(){
-      this.rota.navigateByUrl('/home');
+      this.rota.navigateByUrl('/cadastro');
     }
 
   ngOnInit() {
