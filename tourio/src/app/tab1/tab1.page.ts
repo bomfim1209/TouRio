@@ -30,7 +30,7 @@ export class Tab1Page {
   }
 
   redirecionamento(){
-    this.router.navigateByUrl('intro')
+    this.router.navigateByUrl('apresentacao')
   }
 
 }
