@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
     await loading.dismiss();
     this.isAuthenticated = true;
     this.showToast('ESTAMOS CONECTADOS');
-    this.rota.navigateByUrl('/apresentacao'); //ROTA PARA A TELA
+    this.rota.navigateByUrl('/tabs'); //ROTA PARA A TELA
     } catch (error) {
     await loading.dismiss();
     this.showToast('NÃO ESTAMOS CONECTADOS');

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import mapboxgl from 'mapbox-gl';
 
 @Component({
@@ -11,7 +10,7 @@ export class Tab1Page {
 
   map!: mapboxgl.Map;
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngAfterViewInit() {
     // Defina o token de acesso do Mapbox
@@ -29,8 +28,6 @@ export class Tab1Page {
     this.map.addControl(new mapboxgl.NavigationControl());
   }
 
-  redirecionamento(){
-    this.router.navigateByUrl('apresentacao')
-  }
+  
 
 }
