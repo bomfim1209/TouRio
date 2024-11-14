@@ -11,6 +11,7 @@ export class Tab1Page {
   map!: mapboxgl.Map;
   searchQuery: string = ''; // Variável para armazenar o texto digitado
   suggestions: any[] = []; // Lista de sugestões exibidas
+  activeMarker!: mapboxgl.Marker | null; // Variável para armazenar o marcador ativo
 
   constructor() {}
 
@@ -63,8 +64,13 @@ export class Tab1Page {
       zoom: 14
     });
 
-    // Adicione um marcador no local selecionado
-    new mapboxgl.Marker()
+    // Remova o marcador ativo, se existir
+    if (this.activeMarker) {
+      this.activeMarker.remove();
+    }
+
+    // Adicione um novo marcador no local selecionado
+    this.activeMarker = new mapboxgl.Marker()
       .setLngLat([longitude, latitude])
       .addTo(this.map);
 
@@ -72,5 +78,4 @@ export class Tab1Page {
     this.searchQuery = suggestion.place_name;
     this.suggestions = [];
   }
-
 }
