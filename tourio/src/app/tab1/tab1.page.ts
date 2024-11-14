@@ -9,6 +9,8 @@ import mapboxgl from 'mapbox-gl';
 export class Tab1Page {
 
   map!: mapboxgl.Map;
+  searchQuery: string = ''; // Variável para armazenar o texto digitado
+  suggestions: any[] = []; // Lista de sugestões exibidas
 
   constructor() {}
 
@@ -28,6 +30,47 @@ export class Tab1Page {
     this.map.addControl(new mapboxgl.NavigationControl());
   }
 
-  
+  // Função para buscar sugestões de locais na API do Mapbox
+  async fetchSuggestions(query: string): Promise<void> {
+    if (!query.trim()) {
+      this.suggestions = [];
+      return;
+    }
+
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?access_token=${(mapboxgl as any).accessToken}&autocomplete=true&limit=5`;
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Erro ao buscar sugestões');
+      }
+
+      const data = await response.json();
+      this.suggestions = data.features; // Atualiza a lista de sugestões
+    } catch (error) {
+      console.error('Erro:', error);
+      this.suggestions = [];
+    }
+  }
+
+  // Função para selecionar uma sugestão
+  selectSuggestion(suggestion: any): void {
+    const [longitude, latitude] = suggestion.geometry.coordinates;
+
+    // Centralize o mapa nas coordenadas retornadas
+    this.map.flyTo({
+      center: [longitude, latitude],
+      zoom: 14
+    });
+
+    // Adicione um marcador no local selecionado
+    new mapboxgl.Marker()
+      .setLngLat([longitude, latitude])
+      .addTo(this.map);
+
+    // Limpa as sugestões e o campo de busca
+    this.searchQuery = suggestion.place_name;
+    this.suggestions = [];
+  }
 
 }

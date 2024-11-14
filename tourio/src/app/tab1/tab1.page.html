@@ -8,7 +8,22 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar placeholder="Custom Placeholder"></ion-searchbar>
+  <div>
+    <!-- Barra de busca -->
+    <ion-searchbar placeholder="Custom Placeholder" id="search-input"
+      placeholder="Digite um local"
+      [(ngModel)]="searchQuery"
+      (ionInput)="fetchSuggestions(searchQuery)">
+    </ion-searchbar>
+  
+    <!-- Lista de sugestões -->
+    <ul *ngIf="suggestions.length > 0">
+      <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)"> {{ suggestion.place_name }}</li>
+    </ul>
+
+  </div>
+
+
   <div class="map" id="map"></div>
   
   <div>
