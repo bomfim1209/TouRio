@@ -17,15 +17,15 @@
 </ion-content> -->
 
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Mapa com Autocomplete</ion-title>
+  <ion-toolbar class="barra-nav">
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+ <ion-content>
   <div style="padding: 10px; position: relative;">
-    <!-- Barra de busca -->
-    <ion-input
+    <!-- Barra de busca-->
+    <ion-input>
       id="search-input"
       placeholder="Digite um local"
       [(ngModel)]="searchQuery"
@@ -47,6 +47,6 @@
     </ul>
   </div>
 
-  <!-- Mapa -->
+  <!---- Mapa -->
   <div id="map" style="width: 100%; height: 50%; margin-top: 20px;"></div>
 </ion-content>
