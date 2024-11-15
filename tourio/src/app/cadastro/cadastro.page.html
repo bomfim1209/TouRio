@@ -1,38 +1,63 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button text="Voltar"></ion-back-button>
-    </ion-buttons>
+    <ion-button fill="default" color="#30B0C7" slot="start">
+      <ion-back-button text="Voltar" fill="default" color="#30B0C7" class="buttom-voltar">Voltar</ion-back-button>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="flex-center">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Cadastro</ion-card-title>
-      </ion-card-header>
-    
+
+  <div class="ion-text-center">
+    <h1 class="text-principal">CADASTRO</h1>
+  </div>
+
+    <ion-card class="card-cadastro">
+
       <ion-card-content>
-        <ion-item>
-          <ion-input type="text" label="Nome Completo" labelPlacement="floating" [(ngModel)]="fullName"></ion-input>
+
+        <ion-item class="caixinha1" lines="none">
+          <h2>Nome Completo:</h2>
         </ion-item>
 
-        <ion-item>
-          <ion-input type="email" label="E-mail" labelPlacement="floating" [(ngModel)]="email"></ion-input>
+        <ion-item class="caixinha2" lines="none">
+          <ion-input type="text" labelPlacement="floating" [(ngModel)]="fullName" class="retangulo2"></ion-input>
         </ion-item>
 
-        <ion-item>
-          <ion-input type="password" label="Senha" labelPlacement="floating" [(ngModel)]="password"></ion-input>
+        <ion-item class="caixinha1" lines="none">
+          <h2>E-mail:</h2>
         </ion-item>
 
-        <ion-item>
-          <ion-input type="password" label="Confirmar Senha" labelPlacement="floating" [(ngModel)]="confirmPassword"></ion-input>
+        <ion-item class="caixinha2" lines="none">
+          <ion-input type="email" labelPlacement="floating" [(ngModel)]="email" class="retangulo2"></ion-input>
         </ion-item>
+
+        <ion-item class="caixinha1" lines="none">
+          <h2>Senha:</h2>
+        </ion-item>
+
+        <ion-item class="caixinha2" lines="none">
+          <ion-input type="password" labelPlacement="floating" [(ngModel)]="password" class="retangulo2"></ion-input>
+        </ion-item>
+
+        <ion-item class="caixinha1" lines="none">
+          <h2>Confirme a senha:</h2>
+        </ion-item>
+
+        <ion-item class="caixinha2" lines="none">
+          <ion-input type="password" labelPlacement="floating" [(ngModel)]="confirmPassword" class="retangulo2"></ion-input>
+        </ion-item>
+
       </ion-card-content>
 
-      <ion-button color="success" size="full" (click)="register()">Cadastrar</ion-button>
+      <ion-button class="button-cadastro" fill="default" size="full" (click)="register()">Cadastrar</ion-button>
 
     </ion-card>
-  </div>
+
+    <ion-item class="logo-rodape">
+      <ion-thumbnail>
+        <img class="teste" src="../../assets/logo-tourio.jpeg" /></ion-thumbnail>
+    </ion-item>
+
+    
 </ion-content>

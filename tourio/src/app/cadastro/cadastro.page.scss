@@ -3,12 +3,91 @@ ion-button{
 }
 
 ion-content{
-    --background: grey;
+    --background:  #076839;
 
     height: 100%;
     width: 100%;
 }
 
-// ion-toolbar{
-//     --background: grey;
-// }
+
+.text-principal {
+    font-family: 'Roboto';
+    color: #FFFFFF;
+    margin-top: 50px;
+    font-style: normal;
+    font-size: 33px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.card-cadastro {
+position: center;
+align-items: center;
+margin-top: 70px;
+margin-left: 25px;
+margin-right: 25px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 16px;
+background: #D9D9D9;
+}
+
+.caixinha1{
+    --background: #D9D9D9;
+    --border: none;
+}
+
+.caixinha2 {
+    --background: #D9D9D9;
+    margin: none;
+    padding: none;
+    border-radius: 20px;
+    }
+
+
+.retangulo2 {
+--width: 100%;
+border-radius: 11px;
+margin-top: 6px;
+margin-bottom: 6px;
+box-sizing: border-box;
+--background: #BACEAA;
+        
+}
+
+.logo-rodape{
+    --background: #076839;
+}
+
+ion-item h2 {
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+text-align: center;
+
+color: #000000;
+
+}
+
+.button-cadastro{
+display: flex;
+position: center;
+--background: #30B0C7;
+--color: white;
+--border-radius: 8px;
+margin-top: 25px;
+margin-bottom: 25px;
+margin-left: 60px;
+margin-right: 60px;
+padding: 16px;
+
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.buttom-voltar {
+    background: #30B0C7;
+    padding: 7px;
+    border-radius: 7px;
+}

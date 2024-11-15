@@ -1,28 +1,48 @@
-<ion-content>
-  <div class="flex-center">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Login</ion-card-title>
-      </ion-card-header>
+<ion-content class="background-image">
+  <!--<ion-img src="../../assets/cristo-login.png"></ion-img>-->
+
+<div class="ion-text-center">
+<h1 class="text-principal">Iniciar sessão</h1>
+</div>
     
-      <ion-card-content>
-        <ion-item>
-          <ion-input type="email" label="E-mail" labelPlacement="floating" [(ngModel)]="email"></ion-input>
+
+    <ion-card-content class="card-login">
+        <ion-item class="caixinha1" lines="none">
+          <h2>Email:</h2>
         </ion-item>
 
-        <ion-item>
-          <ion-input type="password" label="Senha" labelPlacement="floating" [(ngModel)]="password" type="password">
-            <!-- <ion-input-password-toggle slot="end"></ion-input-password-toggle> -->
-          </ion-input>
+        <ion-item class="caixinha2" lines="none">
+          <ion-input type="email" labelPlacement="floating" [(ngModel)]="email" class="retangulo2"></ion-input>
+        </ion-item>
+
+        <ion-item class="caixinha1" lines="none">
+          <h2>Senha:</h2>
+        </ion-item>
+
+        <ion-item class="caixinha2" lines="none">
+          <ion-input type="password" labelPlacement="floating" [(ngModel)]="password" type="password" class="retangulo3"></ion-input>
         </ion-item>
         
-        <ion-button color="success" size="full" (click)="login()">Entrar</ion-button>
-        <ion-button color="success" size="full" fill="clear" (click)="redirecionar_cadastro()">Cadastrar</ion-button>
-        <ion-button color="success" size="full" fill="clear" [routerLink]="['/tabs']">Tela Home</ion-button>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div class="ion-text-start">Esqueceu sua senha?</div>
+            </ion-col>
+            <ion-col>
+              <div class="ion-text-end">Clique aqui!</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
+    </ion-card-content>
 
-      </ion-card-content>
+ <ion-button class="button-enter" fill="default" (click)="login()">Entrar</ion-button>
 
-    </ion-card>
-  </div>
+ <div class="ion-text-center">
+    <h1 class="text-principal">Ainda não se cadastrou?</h1>
+ </div>
+    
+<ion-button class="button-enter2" size="full" fill="default" (click)="redirecionar_cadastro()">Cadastre-se</ion-button>
+
 </ion-content>
+    
