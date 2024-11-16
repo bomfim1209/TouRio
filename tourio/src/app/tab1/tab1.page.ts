@@ -1,63 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+import { MapboxService } from 'src/app/services/mapbox.service';
 import mapboxgl from 'mapbox-gl';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements AfterViewInit {
 
-  map!: mapboxgl.Map;
+  map!: mapboxgl.Map;  // Define corretamente o tipo do mapa
   searchQuery: string = ''; // Variável para armazenar o texto digitado
   suggestions: any[] = []; // Lista de sugestões exibidas
-  activeMarker!: mapboxgl.Marker | null; // Variável para armazenar o marcador ativo
+  activeMarker: mapboxgl.Marker | null = null; // Variável para armazenar o marcador ativo
 
-  constructor() {}
+  constructor(private mapboxService: MapboxService) {}
 
   ngAfterViewInit() {
-    // Defina o token de acesso do Mapbox a partir do environment
-    (mapboxgl as any).accessToken = environment.mapboxToken;
-
-    // Inicialize o mapa com as configurações desejadas
-    this.map = new mapboxgl.Map({
-      container: 'map', // ID do elemento onde o mapa será exibido
-      style: 'mapbox://styles/grup4/cm3j3rsyk00bv01r27hl7hosx', // Estilo do mapa
-      center: [-43.2535559, -22.8671481], // Coordenadas iniciais [longitude, latitude]
-      zoom: 13 // Nível de zoom inicial
-    });
-
-    // Adicione controles de navegação ao mapa
-    this.map.addControl(new mapboxgl.NavigationControl());
+    // Inicializa o mapa chamando o serviço
+    this.map = this.mapboxService.initializeMap('map');
   }
 
-  // Função para buscar sugestões de locais na API do Mapbox
+  // Função para buscar sugestões de locais, chamando o serviço
   async fetchSuggestions(query: string): Promise<void> {
-    if (!query.trim()) {
-      this.suggestions = [];
-      return;
-    }
-
-    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?access_token=${environment.mapboxToken}&autocomplete=true&limit=5`;
-
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error('Erro ao buscar sugestões');
-      }
-
-      const data = await response.json();
-      this.suggestions = data.features; // Atualiza a lista de sugestões
-    } catch (error) {
-      console.error('Erro:', error);
-      this.suggestions = [];
-    }
+    this.suggestions = await this.mapboxService.fetchSuggestions(query);
   }
 
   // Função para selecionar uma sugestão
   selectSuggestion(suggestion: any): void {
     const [longitude, latitude] = suggestion.geometry.coordinates;
+
+    // Verifique se o mapa foi inicializado corretamente
+    if (!this.map) {
+      console.error("Mapa não inicializado.");
+      return;
+    }
 
     // Centralize o mapa nas coordenadas retornadas
     this.map.flyTo({
@@ -73,7 +50,7 @@ export class Tab1Page {
     // Adicione um novo marcador no local selecionado
     this.activeMarker = new mapboxgl.Marker()
       .setLngLat([longitude, latitude])
-      .addTo(this.map);
+      .addTo(this.map); // Certifique-se de que o mapa é válido
 
     // Limpa as sugestões e o campo de busca
     this.searchQuery = suggestion.place_name;
