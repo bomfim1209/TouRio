@@ -1,5 +1,4 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
 import mapboxgl from 'mapbox-gl';
 
 @Component({
@@ -13,7 +12,7 @@ export class Tab2Page implements AfterViewInit {
   searchQuery: string = ''; // Variável para armazenar o texto digitado
   suggestions: any[] = []; // Lista de sugestões exibidas
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngAfterViewInit() {
     // Defina o token de acesso do Mapbox
@@ -29,10 +28,6 @@ export class Tab2Page implements AfterViewInit {
 
     // Adicione controles de navegação ao mapa
     this.map.addControl(new mapboxgl.NavigationControl());
-  }
-
-  redirecionamento() {
-    this.router.navigateByUrl('apresentacao');
   }
 
   // Função para buscar sugestões de locais na API do Mapbox
