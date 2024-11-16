@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import mapboxgl from 'mapbox-gl';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-tab1',
@@ -16,8 +17,8 @@ export class Tab1Page {
   constructor() {}
 
   ngAfterViewInit() {
-    // Defina o token de acesso do Mapbox
-    (mapboxgl as any).accessToken = 'pk.eyJ1IjoiZ3J1cDQiLCJhIjoiY20zNnJieHJ2MDhiZDJwb201eWhmb2xwbSJ9.UCAN6TTWyWd52cLVHHjLRQ';
+    // Defina o token de acesso do Mapbox a partir do environment
+    (mapboxgl as any).accessToken = environment.mapboxToken;
 
     // Inicialize o mapa com as configurações desejadas
     this.map = new mapboxgl.Map({
@@ -26,7 +27,6 @@ export class Tab1Page {
       center: [-43.2535559, -22.8671481], // Coordenadas iniciais [longitude, latitude]
       zoom: 13 // Nível de zoom inicial
     });
-    
 
     // Adicione controles de navegação ao mapa
     this.map.addControl(new mapboxgl.NavigationControl());
@@ -39,7 +39,7 @@ export class Tab1Page {
       return;
     }
 
-    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?access_token=${(mapboxgl as any).accessToken}&autocomplete=true&limit=5`;
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?access_token=${environment.mapboxToken}&autocomplete=true&limit=5`;
 
     try {
       const response = await fetch(url);

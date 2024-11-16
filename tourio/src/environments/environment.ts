@@ -7,15 +7,22 @@ import { producerAccessed } from '@angular/core/primitives/signals';
 
 export const environment = {
   production: false,
-  apiKey: "AIzaSyDivXsHVAABGRG9Jtk5tYQlXVJyfmLzXs0",
-  authDomain: "tourio-20368.firebaseapp.com",
-  projectId: "tourio-20368",
-  storageBucket: "tourio-20368.firebasestorage.app",
-  messagingSenderId: "894586811710",
-  appId: "1:894586811710:web:70211c8fa3ad5c5130286f"
+
+  firebase:{
+    production: false,
+    apiKey: "AIzaSyDivXsHVAABGRG9Jtk5tYQlXVJyfmLzXs0",
+    authDomain: "tourio-20368.firebaseapp.com",
+    projectId: "tourio-20368",
+    storageBucket: "tourio-20368.firebasestorage.app",
+    messagingSenderId: "894586811710",
+    appId: "1:894586811710:web:70211c8fa3ad5c5130286f"
+  },
+
+  mapboxToken: 'pk.eyJ1IjoiZ3J1cDQiLCJhIjoiY20zNnJieHJ2MDhiZDJwb201eWhmb2xwbSJ9.UCAN6TTWyWd52cLVHHjLRQ',
+    
 };
 
-const app = initializeApp(environment);
+const app = initializeApp(environment.firebase);
 const analytics = getAnalytics(app);
 
 
