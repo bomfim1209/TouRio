@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../services/firebase.service';
 import { Router } from '@angular/router';
 import { ToastController, LoadingController } from '@ionic/angular';
 
