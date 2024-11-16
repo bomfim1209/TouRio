@@ -26,6 +26,7 @@ export class Tab1Page {
       center: [-43.2535559, -22.8671481], // Coordenadas iniciais [longitude, latitude]
       zoom: 13 // Nível de zoom inicial
     });
+    
 
     // Adicione controles de navegação ao mapa
     this.map.addControl(new mapboxgl.NavigationControl());
