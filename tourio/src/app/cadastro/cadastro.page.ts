@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ToastController, LoadingController } from '@ionic/angular';
 
@@ -15,13 +15,13 @@ export class CadastroPage implements OnInit {
   confirmPassword: string = '';
 
   constructor(
-    private afAuth: AngularFireAuth,
-    private rota: Router,
+    private authService: AuthService,
+    private router: Router,
     private toastController: ToastController,
     private loadingController: LoadingController
-  ) { }
+  ) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   async register() {
     // Verifica se as senhas coincidem
@@ -42,23 +42,26 @@ export class CadastroPage implements OnInit {
     await loading.present();
 
     try {
-      // Tenta criar uma conta no Firebase com o email e senha
-      const userCredential = await this.afAuth.createUserWithEmailAndPassword(this.email, this.password);
+      // Chama o método de registro no serviço
+      await this.authService.register(this.email, this.password);
       await loading.dismiss();
-      
+
       // Exibe uma mensagem de sucesso e redireciona para a página de login
       this.showToast('Cadastro realizado com sucesso!');
-      this.rota.navigateByUrl('/login');
-      
-    } catch (error) {
+      this.router.navigateByUrl('/login');
+    } catch (error: any) {
       await loading.dismiss();
-      let errorMsg = 'Falha ao realizar o cadastro';
-      
+
       // Tratamento de erros específicos do Firebase
-      // if (error.code === 'auth/email-already-in-use') errorMsg = 'Email já está em uso.';
-      // else if (error.code === 'auth/invalid-email') errorMsg = 'Email inválido.';
-      // else if (error.code === 'auth/weak-password') errorMsg = 'Senha muito fraca.';
-      
+      let errorMsg = 'Falha ao realizar o cadastro.';
+      if (error.code === 'auth/email-already-in-use') {
+        errorMsg = 'Email já está em uso.';
+      } else if (error.code === 'auth/invalid-email') {
+        errorMsg = 'Email inválido.';
+      } else if (error.code === 'auth/weak-password') {
+        errorMsg = 'Senha muito fraca.';
+      }
+
       this.showToast(errorMsg);
     }
   }
@@ -66,7 +69,7 @@ export class CadastroPage implements OnInit {
   async showToast(message: string) {
     const toast = await this.toastController.create({
       message,
-      duration: 2000
+      duration: 2000,
     });
     toast.present();
   }

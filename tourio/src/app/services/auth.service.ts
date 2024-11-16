@@ -28,4 +28,14 @@ export class AuthService {
     const user = await this.afAuth.currentUser;
     return !!user;
   }
+
+  // Método para cadastro
+  async register(email: string, password: string): Promise<any> {
+    try {
+      const userCredential = await this.afAuth.createUserWithEmailAndPassword(email, password);
+      return userCredential;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
