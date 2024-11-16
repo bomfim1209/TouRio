@@ -7,10 +7,11 @@
 <ion-content>
   <div style="padding: 10px; position: relative;">
     <!-- Barra de busca-->
-    <ion-input id="search-input"
-      placeholder="Digite um local"
-      [(ngModel)]="searchQuery"
-      (ionInput)="fetchSuggestions(searchQuery)">
+    <ion-searchbar>
+      <ion-input id="search-input"
+        placeholder="Digite um local"
+        [(ngModel)]="searchQuery"
+        (ionInput)="fetchSuggestions(searchQuery)"></ion-input>
     </ion-searchbar>
   
     <!-- Lista de sugestões -->
