@@ -22,7 +22,7 @@ export class Tab1Page {
     // Inicialize o mapa com as configurações desejadas
     this.map = new mapboxgl.Map({
       container: 'map', // ID do elemento onde o mapa será exibido
-      style: 'mapbox://styles/mapbox/streets-v11', // Estilo do mapa
+      style: 'mapbox://styles/grup4/cm3j3rsyk00bv01r27hl7hosx', // Estilo do mapa
       center: [-43.2535559, -22.8671481], // Coordenadas iniciais [longitude, latitude]
       zoom: 13 // Nível de zoom inicial
     });
