@@ -25,19 +25,16 @@ export class MapboxService {
   }
 
   // Função para buscar sugestões de locais na API TAB1
-  async fetchSuggestions(query: string): Promise<any[]> {
-    if (!query.trim()) {
-      return [];
-    }
-
-    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?access_token=${environment.mapboxToken}&autocomplete=true&limit=5`;
-
+  private async fetchGeocoding(query: string, country?: string): Promise<any[]> {
+    if (!query.trim()) return [];
+  
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?access_token=${environment.mapboxToken}&autocomplete=true&limit=5${country ? `&country=${country}` : ''}`;
+  
     try {
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error('Erro ao buscar sugestões');
       }
-      
       const data = await response.json();
       return data.features;
     } catch (error) {
@@ -45,33 +42,22 @@ export class MapboxService {
       return [];
     }
   }
-
-
-  // Busca sugestões de endereços TAB 2
-  async fetchRecomendation(query: string): Promise<any[]> {
-    if (!query.trim()) {
-      return [];
-    }
-
-    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?access_token=${environment.mapboxToken}&country=BR&autocomplete=true&limit=5`;
-
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error('Erro ao buscar sugestões');
-      }
-      
-      const data = await response.json();
-      return data.features.map((feature: any) => ({
-        name: feature.text,
-        fullAddress: feature.place_name,
-        coordinates: feature.geometry.coordinates, // [longitude, latitude]
-      }));
-    } catch (error) {
-      console.error('Erro ao buscar sugestões:', error);
-      return [];
-    }
+  
+    // FUNÇÃO TAB1
+  async fetchSuggestions(query: string): Promise<any[]> {
+    return this.fetchGeocoding(query);
   }
+  
+  // FUNÇÃO TAB2
+  async fetchRecomendation(query: string): Promise<any[]> {
+    const results = await this.fetchGeocoding(query, 'BR');
+    return results.map(feature => ({
+      name: feature.text,
+      fullAddress: feature.place_name,
+      coordinates: feature.geometry.coordinates,
+    }));
+  }
+  
 
   // Busca estabelecimentos próximos (POIs) em um raio de 1.5km
   async fetchNearbyPOIs(coordinates: [number, number]): Promise<any[]> {
