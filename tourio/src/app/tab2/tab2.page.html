@@ -1,74 +1,35 @@
-<ion-header class="teste">
-  <ion-toolbar class="barra-nav">
-
-    <ion-item class="logo-rodape">
-      <ion-thumbnail>
-        <img class="teste" src="../../assets/logo-tourio.jpeg" /></ion-thumbnail>
-    
-      <ion-title>Sugestões</ion-title>
-
-    </ion-item>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Buscar Estabelecimentos</ion-title>
   </ion-toolbar>
-
-<ion-card>
-  <ion-card-header>
-    <ion-card-title class="ion-text-center">Veja o que recomendamos pra você!!</ion-card-title>
-    <ion-card-subtitle></ion-card-subtitle>
-  </ion-card-header>
-
-  <ion-card-content>
-    <ion-list>
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Cristo redentor" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        
-        <ion-label>Cristo redentor</ion-label>
-        <ion-button fill="clear" slot="end">Ver mais</ion-button>
-      </ion-item>
-
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Pão de açúcar" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>Pão de açúcar</ion-label>
-        <ion-button fill="clear" slot="end">Ver mais</ion-button>
-      </ion-item>
-
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Vista Chinesa" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>Vista Chinesa</ion-label>
-        <ion-button fill="clear" slot="end">Ver mais</ion-button>
-      </ion-item>
-
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="BioParque" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>BioParque</ion-label>
-        <ion-button fill="clear" slot="end">Ver mais</ion-button>
-      </ion-item>
-
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Praia do Arpoador" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>Praia do Arpoador</ion-label>
-        <ion-button fill="clear" slot="end">Ver mais</ion-button>
-      </ion-item>
-
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img alt="Pedra do sal" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-        </ion-thumbnail>
-        <ion-label>Pedra do Sal</ion-label>
-        <ion-button fill="clear" slot="end">Ver mais</ion-button>
-      </ion-item>
-
-
-    </ion-list>
-  </ion-card-content>
-</ion-card>
 </ion-header>
+
+<ion-content>
+  <ion-searchbar 
+  placeholder="Digite um endereço"
+  [(ngModel)]="searchQuery" 
+  (ionInput)="searchAddress($event)">
+</ion-searchbar>
+
+<!-- Lista de sugestões -->
+<ion-list *ngIf="addresses.length > 0">
+  <ion-item *ngFor="let address of addresses" (click)="selectAddress(address)">
+    {{ address.fullAddress }}
+  </ion-item>
+</ion-list>
+
+
+  <!-- LISTA DE CARDS -->
+  <ion-list *ngIf="pois.length > 0">
+    <ion-card *ngFor="let poi of pois">
+      <ion-card-header>
+        <ion-card-title>{{ poi.name }}</ion-card-title>
+        <ion-card-subtitle>{{ poi.type }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Endereço:</strong> {{ poi.address }}</p>
+        <p><strong>Descrição:</strong> {{ poi.description }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

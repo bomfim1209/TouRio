@@ -24,7 +24,7 @@ export class MapboxService {
     return map;
   }
 
-  // Função para buscar sugestões de locais na API do Mapbox
+  // Função para buscar sugestões de locais na API TAB1
   async fetchSuggestions(query: string): Promise<any[]> {
     if (!query.trim()) {
       return [];
@@ -41,6 +41,57 @@ export class MapboxService {
       return data.features;
     } catch (error) {
       console.error('Erro:', error);
+      return [];
+    }
+  }
+
+
+  // Busca sugestões de endereços TAB 2
+  async fetchRecomendation(query: string): Promise<any[]> {
+    if (!query.trim()) {
+      return [];
+    }
+
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?access_token=${environment.mapboxToken}&country=BR&autocomplete=true&limit=5`;
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Erro ao buscar sugestões');
+      }
+      const data = await response.json();
+      return data.features.map((feature: any) => ({
+        name: feature.text,
+        fullAddress: feature.place_name,
+        coordinates: feature.geometry.coordinates, // [longitude, latitude]
+      }));
+    } catch (error) {
+      console.error('Erro ao buscar sugestões:', error);
+      return [];
+    }
+  }
+
+  // Busca estabelecimentos próximos (POIs) em um raio de 1.5km
+  async fetchNearbyPOIs(coordinates: [number, number]): Promise<any[]> {
+    const [longitude, latitude] = coordinates;
+
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/poi.json?access_token=${environment.mapboxToken}&proximity=${longitude},${latitude}&limit=10&types=poi&radius=1500`;
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Erro ao buscar POIs');
+      }
+      const data = await response.json();
+      return data.features.map((feature: any) => ({
+        name: feature.text,
+        type: feature.properties.category || 'Indefinido',
+        address: feature.place_name,
+        description: feature.properties.description || 'Sem descrição',
+        coordinates: feature.geometry.coordinates,
+      }));
+    } catch (error) {
+      console.error('Erro ao buscar POIs:', error);
       return [];
     }
   }
