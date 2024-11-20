@@ -35,8 +35,13 @@
   </ion-item>
 
   <ion-item>
+    <ion-icon slot="start" name="build-outline"></ion-icon>
+    <ion-button fill="clear" [routerLink]="['/apresentacao']">Desenvolvedores</ion-button>
+  </ion-item>
+
+  <ion-item>
     <ion-icon slot="start" name="exit-outline"></ion-icon>
-    <ion-button fill="clear">Sair da conta</ion-button>
+    <ion-button fill="clear" [routerLink]="['/login']">Sair da conta</ion-button>
   </ion-item>
 
  </ion-list>
