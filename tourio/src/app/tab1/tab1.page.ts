@@ -55,5 +55,12 @@ export class Tab1Page implements AfterViewInit {
     // Limpa as sugestões e o campo de busca
     this.searchQuery = suggestion.place_name;
     this.suggestions = [];
+
+
+
+    // PARAMETROS PARA TESTE, NÃO APAGAR!!!!!
+    console.log(this.searchQuery = suggestion.place_name);
+    console.log(longitude);
+    console.log(latitude);
   }
 }

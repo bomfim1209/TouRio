@@ -22,17 +22,66 @@
     <ul *ngIf="suggestions.length > 0">
       <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)"> {{ suggestion.place_name }}</li>
     </ul>
-
   </div>
-
 
   <div class="map" id="map"></div>
   
-  <div>
-    <p>Video de ajuda <a href="https://www.youtube.com/watch?v=XZHG1e_prmQ" target="_blank">aqui!!!</a> </p>
-  </div>
+  <ion-card-content>
+    <ion-list>
+        <ion-toolbar>
+          <ion-title>Que tal esses lugares ?</ion-title>
+        </ion-toolbar>
+      
+      <ion-item (click)="selectSuggestion({ geometry: { coordinates: [-43.211146, -22.952249] }, place_name: 'Cristo Redentor' })">
+        <ion-thumbnail slot="start">
+          <img alt="Cristo redentor" src="https://archivo.prensa-latina.cu/wp-content/uploads/2021/10/Cristo.jpg" />
+        </ion-thumbnail>
+        
+        <ion-label>Cristo redentor</ion-label>
+        <ion-button fill="clear" slot="end">Ver mais</ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Pão de açúcar" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Pão de açúcar</ion-label>
+        <ion-button fill="clear" slot="end">Ver mais</ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Vista Chinesa" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Vista Chinesa</ion-label>
+        <ion-button fill="clear" slot="end">Ver mais</ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="BioParque" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>BioParque</ion-label>
+        <ion-button fill="clear" slot="end">Ver mais</ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Praia do Arpoador" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Praia do Arpoador</ion-label>
+        <ion-button fill="clear" slot="end">Ver mais</ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Pedra do sal" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Pedra do Sal</ion-label>
+        <ion-button fill="clear" slot="end">Ver mais</ion-button>
+      </ion-item>
 
 
-
-  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+    </ion-list>
+  </ion-card-content>
 </ion-content>

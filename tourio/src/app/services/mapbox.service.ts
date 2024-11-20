@@ -37,6 +37,7 @@ export class MapboxService {
       if (!response.ok) {
         throw new Error('Erro ao buscar sugestões');
       }
+      
       const data = await response.json();
       return data.features;
     } catch (error) {
@@ -59,6 +60,7 @@ export class MapboxService {
       if (!response.ok) {
         throw new Error('Erro ao buscar sugestões');
       }
+      
       const data = await response.json();
       return data.features.map((feature: any) => ({
         name: feature.text,
@@ -82,6 +84,7 @@ export class MapboxService {
       if (!response.ok) {
         throw new Error('Erro ao buscar POIs');
       }
+
       const data = await response.json();
       return data.features.map((feature: any) => ({
         name: feature.text,
