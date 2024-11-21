@@ -4,7 +4,7 @@
       <ion-thumbnail>
         <img class="teste" src="../../assets/logo-tourio.jpeg" />
       </ion-thumbnail>
-        <ion-title>Mapa</ion-title>
+      <ion-title>Mapa</ion-title>
     </ion-item>    
   </ion-toolbar>
 </ion-header>
@@ -12,31 +12,31 @@
 <ion-content>
   <div>
     <!-- Barra de busca -->
-    <ion-searchbar placeholder="Custom Placeholder" id="search-input"
-      placeholder="Digite um local"
+    <ion-searchbar placeholder="Digite um local"
       [(ngModel)]="searchQuery"
-      (ionInput)="fetchSuggestions(searchQuery)">
+      (ionInput)="searchAddress($event)">
     </ion-searchbar>
   
     <!-- Lista de sugestões -->
     <ul *ngIf="suggestions.length > 0">
-      <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)"> {{ suggestion.place_name }}</li>
+      <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)"> 
+        {{ suggestion.place_name }}
+      </li>
     </ul>
   </div>
 
   <div class="map" id="map"></div>
-  
+
   <ion-card-content>
     <ion-list>
-        <ion-toolbar>
-          <ion-title>Que tal esses lugares ?</ion-title>
-        </ion-toolbar>
-      
+      <ion-toolbar>
+        <ion-title>Que tal esses lugares?</ion-title>
+      </ion-toolbar>
+
       <ion-item (click)="selectSuggestion({ geometry: { coordinates: [-43.211146, -22.952249] }, place_name: 'Cristo Redentor' })">
         <ion-thumbnail slot="start">
           <img alt="Cristo redentor" src="https://archivo.prensa-latina.cu/wp-content/uploads/2021/10/Cristo.jpg" />
         </ion-thumbnail>
-        
         <ion-label>Cristo redentor</ion-label>
         <ion-button fill="clear" slot="end">Ver mais</ion-button>
       </ion-item>
@@ -80,8 +80,6 @@
         <ion-label>Pedra do Sal</ion-label>
         <ion-button fill="clear" slot="end">Ver mais</ion-button>
       </ion-item>
-
-
     </ion-list>
   </ion-card-content>
 </ion-content>

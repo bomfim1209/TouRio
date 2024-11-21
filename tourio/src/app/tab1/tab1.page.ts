@@ -1,5 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { MapboxService } from 'src/app/services/mapbox.service';
+import { Subject } from 'rxjs';
+import { debounceTime, switchMap } from 'rxjs/operators';
 import mapboxgl from 'mapbox-gl';
 
 @Component({
@@ -13,17 +15,32 @@ export class Tab1Page implements AfterViewInit {
   searchQuery: string = ''; // Variável para armazenar o texto digitado
   suggestions: any[] = []; // Lista de sugestões exibidas
   activeMarker: mapboxgl.Marker | null = null; // Variável para armazenar o marcador ativo
+  private searchSubject: Subject<string> = new Subject(); // Subject para emitir a busca
 
-  constructor(private mapboxService: MapboxService) {}
+  constructor(private mapboxService: MapboxService) {
+    // Observa as mudanças de busca e aplica o debounce
+    this.searchSubject.pipe(
+      debounceTime(1000), // Espera 500ms após a última entrada
+      switchMap(query => this.mapboxService.fetchSuggestions(query)) // Chama o serviço de sugestões
+    ).subscribe(data => {
+      this.suggestions = data;
+    });
+  }
 
   ngAfterViewInit() {
     // Inicializa o mapa chamando o serviço
     this.map = this.mapboxService.initializeMap('map');
   }
 
-  // Função para buscar sugestões de locais, chamando o serviço
-  async fetchSuggestions(query: string): Promise<void> {
-    this.suggestions = await this.mapboxService.fetchSuggestions(query);
+  // Função chamada no evento ionInput, que aplica o debounce
+  searchAddress(event: any): void {
+    const query = event.target.value;
+
+    if (query && query.trim() !== '') {
+      this.searchSubject.next(query); // Envia o valor para o subject
+    } else {
+      this.suggestions = []; // Limpa as sugestões se o campo estiver vazio
+    }
   }
 
   // Função para selecionar uma sugestão
