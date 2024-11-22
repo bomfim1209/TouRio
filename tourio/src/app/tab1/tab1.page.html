@@ -12,7 +12,7 @@
 <ion-content>
   <div>
     <!-- Barra de busca -->
-    <ion-searchbar placeholder="Digite um local"
+    <ion-searchbar animated="true" color="medium" placeholder="Digite um local"
       [(ngModel)]="searchQuery"
       (ionInput)="searchAddress($event)">
     </ion-searchbar>
@@ -29,7 +29,7 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title class="ion-text-center">Veja o que recomendamos pra você!!</ion-card-title>
+      <ion-card-title class="ion-text-center">Veja nossas recomendações para você!</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
@@ -39,7 +39,7 @@
             <img alt="Cristo redentor" src="https://archivo.prensa-latina.cu/wp-content/uploads/2021/10/Cristo.jpg" />
           </ion-thumbnail>
           <ion-label>Cristo redentor</ion-label>
-          <ion-button fill="clear" slot="end" [routerLink]="['/ver-mais']">Ver mais</ion-button>
+          <ion-button fill="clear" slot="end" color="warning" [routerLink]="['/ver-mais']">Ver mais</ion-button>
         </ion-item>
 
         <ion-item (click)="selectSuggestion({ geometry: { coordinates: [-43.166874, -22.955166] }, place_name: 'Bondinho do Pão de Açúcar, Pç. Gen. Tibúrcio / Morro da Urca / Pão de Açúcar, Rio de Janeiro' })">
@@ -47,7 +47,7 @@
             <img alt="Bondinho do Pão de Açúcar" src="https://inbec.com.br/storage/2022/03/bondinho-pao-de-acucar-vai-operar-com-energia-renovavel-621e5866cd4b8-1200x630-quadrant(C).jpeg?token=95d8e625acd945261b70fd0b802a6713" />
           </ion-thumbnail>
           <ion-label>Bondinho do Pão de Açúcar</ion-label>
-          <ion-button fill="clear" slot="end" [routerLink]="['/ver-mais']">Ver mais</ion-button>
+          <ion-button fill="clear" slot="end" color="warning" [routerLink]="['/ver-mais']">Ver mais</ion-button>
         </ion-item>
 
         <ion-item (click)="selectSuggestion({ geometry: { coordinates: [-43.179855, -22.895122] }, place_name: 'Museu do Amanhã' })">
@@ -55,7 +55,7 @@
             <img alt="Museu do Amanhã" src="https://www.revistamarcozero.com.br/wp-content/uploads/2023/09/Museu-do-Amanh%C3%A3-atinge-a-marca-de-600-mil-visitantes.jpg" />
           </ion-thumbnail>
           <ion-label>Museu do Amanhã</ion-label>
-          <ion-button fill="clear" slot="end" [routerLink]="['/ver-mais']">Ver mais</ion-button>
+          <ion-button fill="clear" slot="end" color="warning" [routerLink]="['/ver-mais']">Ver mais</ion-button>
         </ion-item>
 
         <ion-item (click)="selectSuggestion({ geometry: { coordinates: [-43.191642, -22.893024] }, place_name: 'AquaRio, Pç. Muhammad Ali, Rio de Janeiro' })">
@@ -63,7 +63,7 @@
             <img alt="AquaRio" src="https://viagemeturismo.abril.com.br/wp-content/uploads/2024/05/aquario-marinho-do-rio-de-janeiro-tancao-tunel-submarino.jpg?crop=1&resize=1212,909" />
           </ion-thumbnail>
           <ion-label>AquaRio</ion-label>
-          <ion-button fill="clear" slot="end" [routerLink]="['/ver-mais']">Ver mais</ion-button>
+          <ion-button fill="clear" slot="end" color="warning" [routerLink]="['/ver-mais']">Ver mais</ion-button>
         </ion-item>
 
         <ion-item (click)="selectSuggestion({ geometry: { coordinates: [-43.250219, -22.972115] }, place_name: 'Vista Chinesa, Parque Nacional da Tijuca, Rio de Janeiro' })">
@@ -71,7 +71,7 @@
             <img alt="Vista Chinesa" src="https://fuigosteicontei.com.br/wp-content/uploads/2013/04/10932582744_241160dc8d_b.jpg" />
           </ion-thumbnail>
           <ion-label>Vista Chinesa</ion-label>
-          <ion-button fill="clear" slot="end" [routerLink]="['/ver-mais']">Ver mais</ion-button>
+          <ion-button fill="clear" slot="end" color="warning" [routerLink]="['/ver-mais']">Ver mais</ion-button>
         </ion-item>
 
         <ion-item (click)="selectSuggestion({ geometry: { coordinates: [-43.228624, -22.904164] }, place_name: 'BioParque do Rio, Pq. Quinta da Boa Vista, Rio de Janeiro' })">
@@ -79,7 +79,7 @@
             <img alt="BioParque" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/25/55/cd/logo-oficial-do-bioparque.jpg?w=1200&h=-1&s=1" />
           </ion-thumbnail>
           <ion-label>BioParque</ion-label>
-          <ion-button fill="clear" slot="end" [routerLink]="['/ver-mais']">Ver mais</ion-button>
+          <ion-button fill="clear" slot="end" color="warning" [routerLink]="['/ver-mais']">Ver mais</ion-button>
         </ion-item>
 
         <ion-item (click)="selectSuggestion({ geometry: { coordinates: [-43.192736, -22.98792] }, place_name: 'Praia do Arpoador, Av. Francisco Bhering, Rio de Janeiro' })">
@@ -87,7 +87,7 @@
             <img alt="Praia do Arpoador" src="https://m.ahstatic.com/is/image/accorhotels/arpoador-conheca-uma-das-regioes-mais-charmosas-do-rio-2024-1:3by2?fmt=jpg&op_usm=1.75,0.3,2,0&resMode=sharp2&iccEmbed=true&icc=sRGB&dpr=on,1&wid=335&hei=223&qlt=80" />
           </ion-thumbnail>
           <ion-label>Praia do Arpoador</ion-label>
-          <ion-button fill="clear" slot="end" [routerLink]="['/ver-mais']">Ver mais</ion-button>
+          <ion-button fill="clear" slot="end" color="warning" [routerLink]="['/ver-mais']">Ver mais</ion-button>
         </ion-item>
 
         
