@@ -15,12 +15,13 @@ export class Tab1Page implements AfterViewInit {
   searchQuery: string = ''; // Variável para armazenar o texto digitado
   suggestions: any[] = []; // Lista de sugestões exibidas
   activeMarker: mapboxgl.Marker | null = null; // Variável para armazenar o marcador ativo
+  local: string = '';
   private searchSubject: Subject<string> = new Subject(); // Subject para emitir a busca
 
   constructor(private mapboxService: MapboxService) {
     // Observa as mudanças de busca e aplica o debounce
     this.searchSubject.pipe(
-      debounceTime(1000), // Espera 500ms após a última entrada
+      debounceTime(1000), // Espera milesegundos após a última entrada
       switchMap(query => this.mapboxService.fetchSuggestions(query)) // Chama o serviço de sugestões
     ).subscribe(data => {
       this.suggestions = data;
