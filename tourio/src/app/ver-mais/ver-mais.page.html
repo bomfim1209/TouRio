@@ -1,14 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button fill="default" color="warning" slot="start">
-      <ion-back-button text="Voltar" fill="default"  class="button-test">Voltar</ion-back-button>
-    </ion-button>
-    <ion-title> Ver mais</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Voltar" color="warning"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="custom-title">{{ cardSelecionado?.nome || 'Detalhes' }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card id="card-cor">
+<!-- <ion-content [fullscreen]="true">
+  <ion-card class="card-cor">
     <img alt="Cristo redentor" src="https://archivo.prensa-latina.cu/wp-content/uploads/2021/10/Cristo.jpg" />
     <ion-card-header>
       <ion-card-title >Cristo Redentor</ion-card-title>
@@ -23,7 +23,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card id="card-cor">
+  <ion-card class="card-cor">
     <img alt="Bondinho do Pão de Açúcar" src="https://inbec.com.br/storage/2022/03/bondinho-pao-de-acucar-vai-operar-com-energia-renovavel-621e5866cd4b8-1200x630-quadrant(C).jpeg?token=95d8e625acd945261b70fd0b802a6713" />
     <ion-card-header>
       <ion-card-title>Bondinho do Pão de Açúcar</ion-card-title>
@@ -39,7 +39,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card id="card-cor">
+  <ion-card class="card-cor">
     <img alt="Museu do Amanhã" src="https://www.revistamarcozero.com.br/wp-content/uploads/2023/09/Museu-do-Amanh%C3%A3-atinge-a-marca-de-600-mil-visitantes.jpg" />
     <ion-card-header>
       <ion-card-title>Museu do Amanhã</ion-card-title>
@@ -54,7 +54,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card id="card-cor">
+  <ion-card class="card-cor">
     <img alt="AquaRio" src="https://viagemeturismo.abril.com.br/wp-content/uploads/2024/05/aquario-marinho-do-rio-de-janeiro-tancao-tunel-submarino.jpg?crop=1&resize=1212,909" />
     <ion-card-header>
       <ion-card-title>AquaRio</ion-card-title>
@@ -69,7 +69,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card id="card-cor">
+  <ion-card class="card-cor">
     <img alt="Vista Chinesa" src="https://fuigosteicontei.com.br/wp-content/uploads/2013/04/10932582744_241160dc8d_b.jpg" />
     <ion-card-header>
       <ion-card-title>Vista Chinesa</ion-card-title>
@@ -85,7 +85,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card id="card-cor">
+  <ion-card class="card-cor">
     <img alt="BioParque" src="https://www.turismoecia.net/wp-content/uploads/2021/03/20210308_155930.jpg" />
     <ion-card-header>
       <ion-card-title>BioParque</ion-card-title>
@@ -99,7 +99,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card id="card-cor">
+  <ion-card class="card-cor">
     <img alt="Praia do Arpoador" src="https://m.ahstatic.com/is/image/accorhotels/arpoador-conheca-uma-das-regioes-mais-charmosas-do-rio-2024-1:3by2?fmt=jpg&op_usm=1.75,0.3,2,0&resMode=sharp2&iccEmbed=true&icc=sRGB&dpr=on,1&wid=335&hei=223&qlt=80" />
     <ion-card-header>
       <ion-card-title>Praia do Arpoador</ion-card-title>
@@ -113,5 +113,23 @@
        O nome "Arpoador" vem do antigo costume dos pescadores de arpoadar baleias na região, e hoje a praia atrai tanto turistas quanto locais. 
     </ion-card-content>
   </ion-card>
+</ion-content> -->
 
+<ion-content *ngIf="cardSelecionado">
+  <ion-card class="card-cor">
+    <img [alt]="cardSelecionado.nome" [src]="cardSelecionado.imagem" class="card-image"/>
+    <ion-card-header>
+      <ion-card-title>{{ cardSelecionado.nome }}</ion-card-title>
+      <ion-card-subtitle>
+        <ion-icon [name]="detalhes.icone"></ion-icon>
+        {{ detalhes.frase }}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ detalhes.descricao1 }}</p>
+      <p>{{ detalhes.descricao2 }}</p>
+      <p>{{ detalhes.descricao3 }}</p>
+      <p>{{ detalhes.descricao4 }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -27,7 +27,7 @@
 
   <div class="map" id="map"></div>
 
-  <ion-card>
+  <!-- <ion-card>
     <ion-card-header>
       <ion-card-title class="ion-text-center">Veja nossas recomendações para você!</ion-card-title>
     </ion-card-header>
@@ -89,10 +89,27 @@
           <ion-label>Praia do Arpoador</ion-label>
           <ion-button fill="clear" slot="end" color="warning" [routerLink]="['/ver-mais']">Ver mais</ion-button>
         </ion-item>
-
         
+      </ion-list>
+    </ion-card-content>
+  </ion-card> -->
 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Veja nossas recomendações para você!</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list *ngFor="let card of cards">
+        <ion-item (click)="selectSuggestion({ geometry: { coordinates: [card.longitude, card.latitude] }, place_name: card.nome  })">
+          <ion-thumbnail slot="start">
+            <img [alt]="card.nome" [src]="card.imagem"/>
+          </ion-thumbnail>
+          <ion-label>{{ card.nome }}</ion-label>
+          <ion-button fill="clear" slot="end" color="warning" (click)="verMais(card)">Ver mais</ion-button>
+        </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
+
 </ion-content>

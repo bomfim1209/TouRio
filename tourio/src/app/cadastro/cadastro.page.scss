@@ -11,48 +11,46 @@ ion-content{
 
 
 #teste1{
-width: 264.62px;
-height: 73px;
-left: 99.52px;
-top: 54.02px;
+    width: 264.62px;
+    height: 73px;
+    left: 99.52px;
+    top: 54.02px;
 
-margin-left: 75px;
+    margin-left: 75px;
 
-background: #A6FFC6;
+    background: #A6FFC6;
 
 }
 
 
 
 .text-principal {
---width: 231px;
-height: 44px;
-left: 116px;
-top: 69px;
-margin-top: 30px;
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 36px;
-line-height: 44px;
+    --width: 231px;
+    height: 44px;
+    left: 116px;
+    top: 69px;
+    margin-top: 30px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
 
-color: #076839;
+    color: #076839;
 
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 
 .card-cadastro {
-position: center;
-align-items: center;
-margin-top: 70px;
-margin-left: 25px;
-margin-right: 25px;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 16px;
-background: #D9D9D9;
+    position: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-left: 25px;
+    margin-right: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    background: #D9D9D9;
 }
 
 .caixinha1{
@@ -69,12 +67,12 @@ background: #D9D9D9;
 
 
 .retangulo2 {
---width: 100%;
-border-radius: 11px;
-margin-top: 6px;
-margin-bottom: 6px;
-box-sizing: border-box;
---background: #BACEAA;
+    --width: 100%;
+    border-radius: 11px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    box-sizing: border-box;
+    --background: #BACEAA;
         
 }
 
@@ -84,29 +82,29 @@ box-sizing: border-box;
 
 ion-item h2 {
     font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 29px;
-text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
 
 color: #000000;
 
 }
 
 .button-cadastro{
-display: flex;
-position: center;
-background: #30B0C7;
---color: white;
-border-radius: 9px;
-margin-top: 20px;
-margin-bottom: 30px;
-margin-left: 60px;
-margin-right: 60px;
-padding: 14px;
+    display: flex;
+    position: center;
+    background: #30B0C7;
+    --color: white;
+    border-radius: 9px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding: 14px;
 
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 

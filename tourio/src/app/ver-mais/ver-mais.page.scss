@@ -1,19 +1,83 @@
-#card-cor {
-    background: #076839;
+// .card-cor {
+//     background: #076839;
+// }
+
+// .button-test {
+//     background: #30B0C7;
+//     padding: 5px;
+//     border-radius: 10px;
+
+// }
+
+// ion-card-title {
+//     font-size: 28px;
+//     color: white;
+// }
+
+// ion-card-subtitle {
+//     color: #BACEAA;
+// }
+
+// ion-card-content{
+//     color: #fff;
+// }
+
+// img{
+//     height: 100%;
+//     width: 100%;
+// }
+
+ion-content{
+    --background: #98eec4;;
 }
 
-.button-test {
-    background: #30B0C7;
-    padding: 5px;
-    border-radius: 10px;
+/* Centraliza o título e ajusta espaçamentos */
+.custom-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Define estilos para o botão de voltar */
+  ion-back-button {
+    --background: transparent;
+    --color: var(--ion-color-warning);
+    margin-left: 8px;
+  }
+  
+  /* Ajusta espaçamento do toolbar */
+  ion-toolbar {
+    --padding-start: 16px;
+    --padding-end: 16px;
+  }
 
-}
-
-ion-card-title {
-    font-size: 28px;
-    color: white;
-}
-
-ion-card-subtitle {
-    color: #BACEAA;
-}
+  /* Imagem no cartão */
+.card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Ajuste no título do card */
+  ion-card-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  /* Subtítulo */
+  ion-card-subtitle {
+    font-size: 16px;
+    color: var(--ion-color-medium);
+    margin-bottom: 16px;
+  }
+  
+  /* Conteúdo do cartão */
+  ion-card-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: var(--ion-color-dark);
+  }
+  
