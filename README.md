@@ -12,10 +12,10 @@ Passo 3: git commit -m "comentario"
 Passo 4: git push para subir a atualização.
 
 # Gerar APK
-Passo 1: ionic build 
-Passo 2: npm install @capacitor/android
-Passo 3: npx cap add android
-Passo 4: npx cap sync
-Passo 5: npx cap open android
+<p>Passo 1: ionic build</p> 
+<p>Passo 2: npm install @capacitor/android</p>
+<p>Passo 3: npx cap add android</p>
+<p>Passo 4: npx cap sync</p>
+<p>Passo 5: npx cap open android</p>
 
 <p>Passos completos <a href="https://docs.google.com/presentation/d/1kraJn07wIMk-k52Ykd_KRchHij4-XmR8/edit#slide=id.p9">AQUI !!!</a></p>

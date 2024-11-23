@@ -3,17 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 import {initializeApp} from 'firebase/app';
 import {getAnalytics} from 'firebase/analytics';
-import { producerAccessed } from '@angular/core/primitives/signals';
+// import { producerAccessed } from '@angular/core/primitives/signals';
 
 export const environment = {
   production: false,
 
   firebase:{
-    production: false,
     apiKey: "AIzaSyDivXsHVAABGRG9Jtk5tYQlXVJyfmLzXs0",
     authDomain: "tourio-20368.firebaseapp.com",
     projectId: "tourio-20368",
-    storageBucket: "tourio-20368.firebasestorage.app",
+    storageBucket: "tourio-20368.appspot.com",
     messagingSenderId: "894586811710",
     appId: "1:894586811710:web:70211c8fa3ad5c5130286f"
   },
