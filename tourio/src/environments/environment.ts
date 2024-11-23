@@ -6,7 +6,7 @@ import {getAnalytics} from 'firebase/analytics';
 // import { producerAccessed } from '@angular/core/primitives/signals';
 
 export const environment = {
-  production: false,
+production: true,
 
   firebase:{
     apiKey: "AIzaSyDivXsHVAABGRG9Jtk5tYQlXVJyfmLzXs0",
