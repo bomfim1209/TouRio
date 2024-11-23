@@ -76,7 +76,11 @@ export class Tab1Page implements AfterViewInit {
     this.searchQuery = suggestion.place_name;
     this.suggestions = [];
 
-
+    // Centraliza visualmente o mapa na tela
+    const mapElement = document.getElementById('map');
+    if (mapElement) {
+      mapElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 
     // PARAMETROS PARA TESTE, NÃO APAGAR!!!!!
     console.log(this.searchQuery = suggestion.place_name);

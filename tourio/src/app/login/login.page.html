@@ -1,50 +1,40 @@
 <ion-content class="background-image">
   <!--<ion-img src="../../assets/cristo-login.png"></ion-img>-->
 
-<div class="ion-text-center">
-  <h1 class="text-principal">Iniciar sessão</h1>
-</div>
+  <div class="ion-text-center">
+    <h1 class="text-principal">Iniciar sessão</h1>
+  </div>
     
 
-    <ion-card-content class="card-login">
-        <ion-item class="caixinha1" lines="none">
-          <h2>Email:</h2>
+    <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>Email:</ion-label>
         </ion-item>
 
-        <ion-item class="caixinha2" lines="none">
+        <ion-item lines="none">
           <ion-input type="email" labelPlacement="floating" [(ngModel)]="email" class="retangulo2"></ion-input>
         </ion-item>
 
-        <ion-item class="caixinha1" lines="none">
-          <h2>Senha:</h2>
+        <ion-item lines="none">
+          <ion-label>Senha:</ion-label>
         </ion-item>
 
-        <ion-item class="caixinha2" lines="none">
-          <ion-input type="password" labelPlacement="floating" [(ngModel)]="password" type="password" class="retangulo3"></ion-input>
+        <ion-item lines="none">
+          <ion-input type="password" labelPlacement="floating" [(ngModel)]="password" class="retangulo2"></ion-input>
         </ion-item>
         
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <div class="ion-text-start">Esqueceu sua senha?</div>
-            </ion-col>
-            <ion-col>
-              <div class="ion-text-end">Clique aqui!</div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+        <ion-label class="esqueci_senha">Esqueceu a sua senha? <u>Clique Aqui!</u></ion-label>
 
     </ion-card-content>
 
- <ion-button class="button-enter" fill="default" (click)="login()">Entrar</ion-button>
+  <div class="ion-text-center">
+    <ion-button class="button-enter" fill="default" (click)="login()">Entrar</ion-button>
 
- <ion-button color="success" size="full" fill="clear" [routerLink]="['/tabs']">Tela Home</ion-button>
+    <!-- <ion-button color="success" size="full" fill="clear" [routerLink]="['/tabs']">Tela Home</ion-button> -->
 
-
- <div class="ion-text-center">
-    <h1 class="text-principal">Ainda não se cadastrou?</h1>
- </div>
-    
-<ion-button class="button-enter2" size="full" fill="default" (click)="redirecionar_cadastro()">Cadastre-se</ion-button>
+    <h2>Ainda não se cadastrou?</h2>
+    <ion-button class="button-enter2" size="full" fill="default" (click)="redirecionar_cadastro()">Cadastre-se</ion-button>
+  </div>
+      
 
 </ion-content>
