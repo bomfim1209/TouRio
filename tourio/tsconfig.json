@@ -5,6 +5,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "noImplicitAny": false,
+
+    // "skipLibCheck": true,
     
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
