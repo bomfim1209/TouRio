@@ -19,3 +19,6 @@ Passo 4: git push para subir a atualização.
 <p>Passo 5: npx cap open android</p>
 
 <p>Passos completos <a href="https://docs.google.com/presentation/d/1kraJn07wIMk-k52Ykd_KRchHij4-XmR8/edit#slide=id.p9">AQUI !!!</a></p>
+
+
+"fileReplacements": [] // tem que ficar vazio esta arte no arquivo ANGULAR.JSON
