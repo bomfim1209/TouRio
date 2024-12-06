@@ -42,4 +42,12 @@ export class Tab2Page {
 
     this.pois = await this.mapboxService.fetchNearbyPOIs(address.coordinates);
   }
+
+  //ATUALIZAR A PAPGINA 
+  handleRefresh(event) {
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 2000);
+  }
 }

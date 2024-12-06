@@ -93,6 +93,14 @@ export class Tab1Page implements AfterViewInit {
     this.verMaisService.setCardSelecionado(card);
     this.router.navigate(['/ver-mais']);
   }
+
+  //ATUALIZAR A PAPGINA 
+  handleRefresh(event) {
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.target.complete();
+    }, 2000);
+  }
   
   cards = [
     { 

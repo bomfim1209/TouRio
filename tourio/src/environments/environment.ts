@@ -7,6 +7,7 @@ import {getAnalytics} from 'firebase/analytics';
 
 export const environment = {
   production: false,
+
   firebase: {
     apiKey: "AIzaSyDivXsHVAABGRG9Jtk5tYQlXVJyfmLzXs0",
     authDomain: "tourio-20368.firebaseapp.com",
@@ -15,6 +16,7 @@ export const environment = {
     messagingSenderId: "894586811710",
     appId: "1:894586811710:web:70211c8fa3ad5c5130286f"
   },
+  
   mapboxToken: 'pk.eyJ1IjoiZ3J1cDQiLCJhIjoiY20zNnJieHJ2MDhiZDJwb201eWhmb2xwbSJ9.UCAN6TTWyWd52cLVHHjLRQ',
 };
 

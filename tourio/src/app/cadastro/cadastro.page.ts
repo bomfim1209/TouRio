@@ -30,8 +30,9 @@ export class CadastroPage implements OnInit {
       return;
     }
 
+    // console.log(this.fullName, this.email, this.password, this.confirmPassword);
     // Verifica se os campos estão preenchidos
-    if (!this.email || !this.password || !this.confirmPassword) {
+    if (!this.fullName.trim() || !this.email.trim() || !this.password.trim() || !this.confirmPassword.trim()) {
       this.showToast('Por favor, preencha todos os campos.');
       return;
     }
@@ -43,8 +44,10 @@ export class CadastroPage implements OnInit {
 
     try {
       // Chama o método de registro no serviço
-      await this.authService.register(this.email, this.password);
+      await this.authService.register(this.email, this.password, this.fullName);
+      // console.log(this.authService.register);
       await loading.dismiss();
+      // console.log(this.fullName, this.email, this.password, this.confirmPassword);
 
       // Exibe uma mensagem de sucesso e redireciona para a página de login
       this.showToast('Cadastro realizado com sucesso!');

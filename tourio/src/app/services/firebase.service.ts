@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthService {
   constructor(private afAuth: AngularFireAuth, private router: Router) {}
 
@@ -30,12 +31,36 @@ export class AuthService {
   }
 
   // Método para cadastro
-  async register(email: string, password: string): Promise<any> {
+  async register(email: string, password: string, displayName: string): Promise<any> {
     try {
       const userCredential = await this.afAuth.createUserWithEmailAndPassword(email, password);
+      console.log(userCredential.user);
+  
+      // Atualiza o nome de exibição (displayName) do usuário após a criação da conta
+      await userCredential.user?.updateProfile({
+        displayName: displayName, // Definindo o nome completo do usuário
+      });
+  
       return userCredential;
     } catch (error) {
       throw error;
     }
+  }
+
+
+  // Novo método para obter o usuário atual
+  async getCurrentUser(): Promise<any> {
+    const user = await this.afAuth.currentUser;
+    if (user) {
+      return user; // Retorna o objeto do usuário autenticado
+    } else {
+      throw new Error('Usuário não autenticado.');
+    }
+  }
+
+  // Novo método para obter o nome do usuário
+  async getUserName(): Promise<string | null> {
+    const user = await this.getCurrentUser();
+    return user.displayName || null; // Retorna o displayName ou null se não estiver definido
   }
 }

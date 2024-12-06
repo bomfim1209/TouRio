@@ -15,9 +15,9 @@ export class IntroPage implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.rota.navigateByUrl('login');
-    }, 2500);
+    // setTimeout(() => {
+    //   this.rota.navigateByUrl('login');
+    // }, 2500);
   }
 
 }
