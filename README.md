@@ -2,7 +2,7 @@
 
 <h2>Comandos do Git <a href="https://github.com/bomfim1209/git_command/blob/main/README.md">AQUI !!!</a></h2>
 
-# ABEIU O PROJETO 
+# ABRIU O PROJETO 
 Passo 1: Git pull para atualizar o arquivo local caso tenha mudanças.
 
 # SUBIR UMA ATUALIZAÇÃO
